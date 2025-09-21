@@ -23,9 +23,10 @@ All results are exported to a CSV file (`students.csv`) with clear headers for f
    cd yale-scraper
    
 2. Install dependencies
+   ```bash
    pip install -r requirements.txt
 
-3. Run the scraper
+4. Run the scraper
    python scraper_all.py
 
 When prompted in the terminal:
