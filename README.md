@@ -27,6 +27,7 @@ All results are exported to a CSV file (`students.csv`) with clear headers for f
    pip install -r requirements.txt
 
 4. Run the scraper
+   ```bash
    python scraper_all.py
 
 When prompted in the terminal:
