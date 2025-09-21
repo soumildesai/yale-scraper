@@ -33,3 +33,9 @@ All results are exported to a CSV file (`students.csv`) with clear headers for f
 When prompted in the terminal:
 Log in via Yale CAS in the opened browser window.
 After scraping, the page will be closed and output will be written to students_full.csv.
+
+
+Resources used:
+Selenium webdriver: https://www.selenium.dev/documentation/webdriver/
+Beautiful Soup web scraping: https://realpython.com/beautiful-soup-web-scraper-python/
+Writing to CSV: https://docs.python.org/3/library/csv.html#csv.DictWriter
