@@ -19,7 +19,7 @@ All results are exported to a CSV file (`students.csv`) with clear headers for f
 
 1. Clone this repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/soumildesai/yale-scraper/
    cd yale-scraper
    
 2. Install dependencies
