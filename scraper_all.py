@@ -1,3 +1,4 @@
+# scraper_all.py
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
@@ -9,10 +10,10 @@ from bs4 import BeautifulSoup
 driver = webdriver.Chrome()
 driver.get("https://students.yale.edu/facebook/")
 
-
-# Wait for login
+# 2. Wait for login
 print("log in manually in the browser window...")
-time.sleep(60)   # Time to login
+while "ticket" not in driver.current_url:
+    time.sleep(1)   # Time to login
 
 # Switch dropdown to 'Yale'
 select_elem = driver.find_element(By.ID, "college_select")
@@ -20,18 +21,16 @@ select = Select(select_elem)
 select.select_by_visible_text("Yale")
 time.sleep(2)
 
-
-# Go to the ALL page
+# 4. Go to the ALL page
 driver.get("https://students.yale.edu/facebook/PhotoPageNew?currentIndex=-1&numberToGet=-1")
 time.sleep(10)
 
 
-# Grab HTML
+# 5. Grab HTML
 html = driver.page_source
 soup = BeautifulSoup(html, "html.parser")
 
-
-# Parse student cards
+# 6. Parse student cards
 cards = soup.select(".student_container")
 print(f"Found {len(cards)} student cards")
 
@@ -81,5 +80,5 @@ with open("students_full.csv", "w", newline="", encoding="utf-8") as fout:
             "photo_url": photo_url,
         })
 
-print("Data saved to students_full.csv")
+print("Done! Data saved to students_full.csv")
 driver.quit()
