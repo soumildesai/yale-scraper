@@ -12,7 +12,7 @@ driver.get("https://students.yale.edu/facebook/")
 
 # Wait for login
 print("log in manually in the browser window...")
-time.sleep(30)   # Time to login
+time.sleep(60)   # Time to login
 
 # Switch dropdown to 'Yale'
 select_elem = driver.find_element(By.ID, "college_select")
